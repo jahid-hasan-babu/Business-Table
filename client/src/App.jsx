@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { Fragment } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import FullscreenLoader from "./components/masterLayout/Fullscreen-Loder";
+import ProductList from "./pages/Product-List";
 
 const App = () => {
   return (
-    <div>
-      <h1>Jahid</h1>
-      <h1>Jahid</h1>
-      <h1>Jahid</h1>
-      <h1>Jahid</h1>
-    </div>
-  )
-}
-
-export default App
-
+    <Fragment>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<ProductList />} />
+        </Routes>
+      </BrowserRouter>
+      <FullscreenLoader />
+    </Fragment>
+  );
+};
+export default App;
